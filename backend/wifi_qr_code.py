@@ -60,7 +60,7 @@ class WifiQrCode:
         This is done by using the img2pdf library to convert the QR code image to a PDF.
         """
         with open(self.pdf_file_path, "wb") as f:
-            f.write(img2pdf.convert('wifi_qrcode.png'))
+            f.write(img2pdf.convert('static/asserts/wifi_qrcode.png'))
 
 
 

@@ -14,6 +14,7 @@ def index():
 
         qr_code = WifiQrCode(wifi_name, password, auth_type, hidden)
         qr_code.create_image()
+        qr_code.make_pdf_qr_code()
 
         return redirect(url_for('display_qr'))
     return render_template('index.html')
