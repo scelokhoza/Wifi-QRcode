@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wi-Fi QR Code Generator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Wi-Fi QR Code Generator</h1>
+        <form action="{{ url_for('index') }}" method="post">
+            <label for="wifi_name">Wi-Fi Name:</label>
+            <input type="text" id="wifi_name" name="wifi_name" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <label for="auth_type">Authentication Type:</label>
+            <select id="auth_type" name="auth_type">
+                <option value="WPA">WPA/WPA2</option>
+                <option value="WEP">WEP</option>
+                <option value="nopass">No Password</option>
+            </select>
+
+            <label for="hidden">
+                <input type="checkbox" id="hidden" name="hidden">
+                Hidden Network
+            </label>
+
+            <button type="submit">Generate QR Code</button>
+        </form>
+    </div>
+</body>
+</html>

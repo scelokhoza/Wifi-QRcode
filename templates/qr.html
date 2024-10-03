@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Wi-Fi QR Code</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Your Wi-Fi QR Code</h1>
+        <img src="{{ url_for('static', filename='asserts/wifi_qrcode.png') }}" alt="Wi-Fi QR Code">
+        <a href="{{ url_for('index') }}" class="button">Generate Another</a>
+    </div>
+</body>
+</html>
