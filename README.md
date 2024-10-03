@@ -7,9 +7,18 @@ got to [Wifi-QR-Code-Generator](https://github.com/scelokhoza/Wifi-QRcode) to ru
 
 [Wifi-QR-Code-Generator]() is a program that generates a qr code for your wifi so you or any of your friends can connect just by scanning without having to take a lot of time typing in the password.
 
-![Screenshot from 2024-08-22 05-17-52](https://github.com/user-attachments/assets/debf6bd7-0087-4502-9abb-6b918f6db2dc)
+![Screenshot from 2024-10-03 10-10-45](https://github.com/user-attachments/assets/1539a08f-8575-412d-b529-fe16b7aa3ed8)
 
-![Screenshot from 2024-08-26 14-17-24](https://github.com/user-attachments/assets/4ede21d5-aa6c-4abc-8346-dcd295818b70)
+#QR display on the browser
+
+![Screenshot from 2024-10-03 10-10-27](https://github.com/user-attachments/assets/9599b72d-5fdc-435b-9704-8b204fcb2e67)
+
+#QR display as a pdf
+
+![Screenshot from 2024-10-03 10-11-04](https://github.com/user-attachments/assets/5c1d68f0-ff4b-43fd-a290-829d352e40ae)
+
+
+
 
 
 
