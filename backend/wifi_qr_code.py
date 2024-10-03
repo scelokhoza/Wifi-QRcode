@@ -1,5 +1,6 @@
+import os
+import img2pdf
 from wifi_qrcode_generator import wifi_qrcode
-
 
 
 
@@ -20,14 +21,13 @@ class WifiQrCode:
 
 
     def create_image(self) -> None:
-        self.generate_qr_code().make_image().save('wifi_qrcode.png')
+        self.generate_qr_code().make_image().save('wifi_qrcode.pdf')
+
+
+    def make_pdf_qr_code(self):
+        with open("qr_code.pdf","wb") as f:
+            f.write(img2pdf.convert('wifi_qrcode.png'))
+            os.remove('wifi_qrcode.png')
 
 
 
-if __name__ == '__main__':
-    wifi = WifiQrCode(
-        wifi_name='TECNO POP 7',
-        password='Prince@3108',
-        authentication_type='WPA'
-    )
-    wifi.create_image()
