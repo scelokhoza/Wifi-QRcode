@@ -70,7 +70,7 @@ class WifiQrCode:
 
         text = self.ssid
         text_width = draw.textlength(text, font=font)
-        image_width, image_height = qr_code_image.size
+        image_width, _ = qr_code_image.size
         text_position = ((image_width - text_width) // 2, 10)
 
         draw.text(text_position, text, font=font, fill="black")
