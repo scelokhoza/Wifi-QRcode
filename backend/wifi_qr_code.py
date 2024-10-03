@@ -1,6 +1,7 @@
 import os
 import img2pdf
 from wifi_qrcode_generator import wifi_qrcode
+from PIL import Image, ImageDraw, ImageFont
 
 
 
@@ -55,12 +56,29 @@ class WifiQrCode:
 
     def make_pdf_qr_code(self):
         """
-        Converts the QR code image to a PDF and saves it to the Downloads folder.
-
-        This is done by using the img2pdf library to convert the QR code image to a PDF.
+        Converts the QR code image to a PDF with the Wi-Fi name (SSID) added on top
+        and saves it to the Downloads folder.
         """
+        qr_code_image = Image.open('static/asserts/wifi_qrcode.png')
+
+        draw = ImageDraw.Draw(qr_code_image)
+
+        try:
+            font = ImageFont.truetype("arial.ttf", 24)
+        except IOError:
+            font = ImageFont.load_default()
+
+        text = self.ssid
+        text_width = draw.textlength(text, font=font)
+        image_width, image_height = qr_code_image.size
+        text_position = ((image_width - text_width) // 2, 10)
+
+        draw.text(text_position, text, font=font, fill="black")
+
+        qr_code_image.save('static/asserts/wifi_qrcode_with_text.png')
+
         with open(self.pdf_file_path, "wb") as f:
-            f.write(img2pdf.convert('static/asserts/wifi_qrcode.png'))
+            f.write(img2pdf.convert('static/asserts/wifi_qrcode_with_text.png'))
 
 
 
